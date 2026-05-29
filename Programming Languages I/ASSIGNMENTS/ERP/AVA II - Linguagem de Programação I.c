@@ -21,7 +21,7 @@ Caio Ronald Carlos da Silva
 
 typedef struct {
 
-    char  nome[30];
+    char  nome[31];
     int   unidades;
     float precoUnitario;
     float valorDoEstoque;
@@ -35,7 +35,7 @@ int adicaoDeMercadorias() {
     mercadoria item;
 
     printf("Adicione o nome da mercadoria (até 30 caracteres):\n");
-    scanf("%c", &item.nome);
+    fgets(item.nome, sizeof(item.nome), stdin);
 
     printf("Adicione a quantidade:\n");
     scanf("%d", &item.unidades);
@@ -55,8 +55,8 @@ int inicio() {
 
     printf("\nEscolha a função:\n");
 
-    printf("\nDigite 1 para Adição de Item ao Estoque.\n");
-    prinft("Digite 2 para Remover um Item do Estoque.\n");
+    printf("\nDigite 1 para Adicionar uma Mercadoria ao Estoque.\n");
+    printf("Digite 2 para Remover uma Mercadoria do Estoque.\n");
     printf("Digite 3 para ver o Relatório Geral.\n");
 
     escolherOpcao();
